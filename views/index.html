@@ -1,0 +1,32 @@
+{% extends "layouts/default.html" %}
+
+{% block alert %}
+<div class="alert">
+    <div class="message">
+        {{message}}
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+
+    <form enctype="multipart/form-data" action="../public/index.php" method="post">
+        <label for="name"> Name
+            <input id="name" name="name" placeholder="Name of your file" type="text" >
+        </label>
+        <label for="file">
+            <input id="file" name="file" type="file" accept="image/png, image/jpeg, image/jpg">
+        </label>
+        <button>Upload</button>
+    </form>
+    {% if name %}
+    <div class="img">
+        {{name}}
+        <img src="{{path}}" alt="votre image" width="480"/>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+

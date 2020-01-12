@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ include('partials/head.html') }}
+</head>
+<body>
+
+{% if message %}
+{% block alert %}{% endblock %}
+{% endif %}
+
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
